@@ -1,0 +1,31 @@
+DAY 16
+Read a string, , and print its integer value; if  cannot be converted to an integer, print Bad String.
+, where  is the length of string .
+ is composed of either lowercase letters () or decimal digits ().
+Sample Input 0
+
+3
+Sample Output 0
+
+3
+
+CODE:
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+
+int main()
+{
+    string S;
+    getline(cin, S);
+    try {
+    {
+        cout<<stoi(S);
+    }
+    } catch (exception e) {
+    cout<<"Bad String";
+    }
+    return 0;
+}
