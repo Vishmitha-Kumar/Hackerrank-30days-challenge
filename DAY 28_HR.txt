@@ -1,0 +1,58 @@
+DAY 17
+Consider a database table, Emails, which has the attributes First Name and Email ID. Given  rows of data simulating the Emails table, print an alphabetically-ordered list of people whose email address ends in .
+
+ Input
+
+6
+riya riya@gmail.com
+julia julia@julia.me
+julia sjulia@gmail.com
+julia julia@gmail.com
+samantha samantha@gmail.com
+tanya tanya@gmail.com
+
+Output
+
+julia
+julia
+riya
+samantha
+tanya
+
+CODE:
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int N, i;
+
+    cin >> N;
+
+    regex exp(".+@gmail\\.com$");
+
+    vector<string> strarray;
+
+    for(i = 0; i < N; i++)
+ {
+        string Fname;
+
+        string Eid;
+
+        cin >> Fname >> Eid;
+
+        if(regex_match(Eid, exp))
+ {
+            strarray.push_back(Fname);
+        }
+    }
+
+    sort(strarray.begin(), strarray.end()); 
+
+    for(i = 0; i < strarray.size();i++) 
+    { 
+        cout << strarray[i] << endl; 
+    }
+
+    return 0;
+}
